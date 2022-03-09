@@ -1,0 +1,54 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Caution = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local LoadingLabel = Instance.new("TextLabel")
+local yes = Instance.new("TextButton")
+
+--Properties:
+
+Caution.Name = "Caution"
+Caution.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Background.Name = "Background"
+Background.Parent = Caution
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.Position = UDim2.new(0.215654969, 0, 0.204737723, 0)
+Background.Size = UDim2.new(0.567891359, 0, 0.588832498, 0)
+
+LoadingLabel.Name = "LoadingLabel"
+LoadingLabel.Parent = Background
+LoadingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LoadingLabel.BackgroundTransparency = 1.000
+LoadingLabel.Position = UDim2.new(0.25, 0, 0.231609195, 0)
+LoadingLabel.Size = UDim2.new(0.5, 0, 0.100000001, 0)
+LoadingLabel.Font = Enum.Font.SourceSansBold
+LoadingLabel.Text = "You Must Bypass First!"
+LoadingLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadingLabel.TextScaled = true
+LoadingLabel.TextSize = 14.000
+LoadingLabel.TextWrapped = true
+
+yes.Name = "yes"
+yes.Parent = Background
+yes.BackgroundColor3 = Color3.fromRGB(85, 255, 127)
+yes.Position = UDim2.new(0.323488057, 0, 0.683908105, 0)
+yes.Size = UDim2.new(0, 250, 0, 50)
+yes.Font = Enum.Font.SourceSans
+yes.Text = "Ok"
+yes.TextColor3 = Color3.fromRGB(0, 0, 0)
+yes.TextSize = 30.000
+
+-- Scripts:
+
+local function KGENWQ_fake_script() -- yes.LocalScript 
+	local script = Instance.new('LocalScript', yes)
+
+	script.Parent.MouseButton1Click(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(KGENWQ_fake_script)()
